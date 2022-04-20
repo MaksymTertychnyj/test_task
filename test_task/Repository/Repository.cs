@@ -28,9 +28,9 @@ namespace test_task.Repository
             return (await dbEntities.AddAsync(entity)).Entity;
         }
 
-        public Task<int> SaveChangesAsync()
+        public async Task<int> SaveChangesAsync()
         {
-            return _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync();
         }
 
         public async Task<TEntity> UpdateAsync(TEntity entity)
